@@ -17,7 +17,7 @@ class TwitchClient():
         self.reader, self.writer = await asyncio.open_connection(host=HOST, port=PORT)
         self.writer.write(f"PASS {TOKEN}\n".encode('utf-8'))
         self.writer.write(f"NICK {NICKNAME}\n".encode('utf-8'))
-        self.writer.write(f"JOIN {CHANNEL}\n".encode('utf-8'))
+        self.writer.write(f"JOIN #{CHANNEL}\n".encode('utf-8'))
 
     async def read(self, buffer=2048):
         r = await self.reader.read(buffer)
@@ -25,7 +25,7 @@ class TwitchClient():
         return r
 
     def send(self, message):
-        message = f'PRIVMSG {CHANNEL} :{message}\n'.encode('utf-8')
+        message = f'PRIVMSG #{CHANNEL} :{message}\n'.encode('utf-8')
         self.writer.write(message)
 
     async def read_forever(self):
