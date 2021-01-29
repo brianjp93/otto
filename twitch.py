@@ -19,8 +19,8 @@ class TwitchClient():
         self.writer.write(f"NICK {NICKNAME}\n".encode('utf-8'))
         self.writer.write(f"JOIN #{CHANNEL}\n".encode('utf-8'))
 
-    async def read(self, buffer=2048):
-        r = await self.reader.read(buffer)
+    async def read(self, read_bytes=2048):
+        r = await self.reader.read(read_bytes)
         r = r.strip().decode('utf-8')
         return r
 
