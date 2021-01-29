@@ -46,21 +46,21 @@ class TwitchBot:
         if 0 <= n <= 100:
             self.tc.send(f'Setting hue to {n}.')
         else:
-            self.tc.send(f'Argument must be between 0 and 100.')
+            self.tc.send('Argument must be between 0 and 100.')
 
     def handle_bri(self, n):
         self.li.set_brightness(n)
         if 0 <= n <= 100:
             self.tc.send(f'Setting brightness to {n}.')
         else:
-            self.tc.send(f'Argument must be between 0 and 100.')
+            self.tc.send('Argument must be between 0 and 100.')
 
     def handle_sat(self, n):
         self.li.set_saturation(n)
         if 0 <= n <= 100:
             self.tc.send(f'Setting saturation to {n}.')
         else:
-            self.tc.send(f'Argument must be between 0 and 100.')
+            self.tc.send('Argument must be between 0 and 100.')
 
     async def handle_message(self):
         message = await self.tc.read()
