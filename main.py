@@ -1,7 +1,6 @@
 import asyncio
 from twitch import TwitchClient
 from huecontroller import Lights
-import select
 
 
 class TwitchBot:
