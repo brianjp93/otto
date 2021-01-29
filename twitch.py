@@ -28,14 +28,6 @@ class TwitchClient():
         message = f'PRIVMSG #{CHANNEL} :{message}\n'.encode('utf-8')
         self.writer.write(message)
 
-    async def read_forever(self):
-        await self.connect()
-        while True:
-            if hasattr(tc, 'reader'):
-                r = await tc.read()
-                yield r
-            else:
-                await asyncio.sleep(1)
 
 async def main():
     tc = TwitchClient()
