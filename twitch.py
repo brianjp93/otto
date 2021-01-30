@@ -1,7 +1,5 @@
 import asyncio
 import os
-import socket
-import time
 from dotenv import load_dotenv, find_dotenv
 
 load_dotenv(find_dotenv())
