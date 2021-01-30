@@ -77,7 +77,7 @@ class TwitchBot:
 
         if message.startswith('PING'):
             print('found ping message')
-            self.tc.writer.write('PONG'.encode('utf-8'))
+            self.tc.writer.write('PONG\n'.encode('utf-8'))
         else:
             fn = self.cmd.get(cmd)
             fn(n) if fn else None
