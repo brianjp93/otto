@@ -1,5 +1,10 @@
+import os
+
 from phue import Bridge
-IP = '10.0.0.156'
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
+
+IP = os.getenv('IP')
 
 
 class Lights:
